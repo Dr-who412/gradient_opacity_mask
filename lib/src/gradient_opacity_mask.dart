@@ -8,12 +8,12 @@ enum GradientType { linear, radial, sweep }
 /// This widget uses a [ShaderMask] to control the opacity or appearance of its
 /// child based on a provided gradient. It supports linear, radial, and sweep
 /// gradients.
-class GradientMask extends StatelessWidget {
+class GradientOpacityMask extends StatelessWidget {
   /// Creates a widget that applies a gradient mask to a child.
   ///
   /// The [opacities] and [stops] lists must not be empty and must have the
   /// same length.
-  GradientMask({
+  GradientOpacityMask({
     super.key,
     required this.child,
     required this.opacities,
@@ -30,7 +30,7 @@ class GradientMask extends StatelessWidget {
 
   /// A convenience constructor for a simple vertical linear gradient.
   /// Fades from [startOpacity] to [endOpacity].
-  GradientMask.vertical({
+  GradientOpacityMask.vertical({
     super.key,
     required this.child,
     double startOpacity = 1.0,
@@ -42,7 +42,7 @@ class GradientMask extends StatelessWidget {
         linearAxis = Axis.vertical;
 
   /// A convenience constructor for a 3-point vertical linear gradient.
-  GradientMask.threePointVertical({
+  GradientOpacityMask.threePointVertical({
     super.key,
     required this.child,
     double startOpacity = 1.0,
@@ -56,7 +56,7 @@ class GradientMask extends StatelessWidget {
 
   /// A convenience constructor for a simple horizontal linear gradient.
   /// Fades from [startOpacity] to [endOpacity].
-  GradientMask.horizontal({
+  GradientOpacityMask.horizontal({
     super.key,
     required this.child,
     double startOpacity = 1.0,
@@ -68,7 +68,7 @@ class GradientMask extends StatelessWidget {
         linearAxis = Axis.horizontal;
 
   /// A convenience constructor for a 3-point horizontal linear gradient.
-  GradientMask.threePointHorizontal({
+  GradientOpacityMask.threePointHorizontal({
     super.key,
     required this.child,
     double startOpacity = 1.0,
@@ -102,7 +102,7 @@ class GradientMask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final maskColors = opacities
-        .map((opacity) => Colors.black.withOpacity(opacity))
+        .map((opacity) => Colors.black.withValues(alpha: opacity))
         .toList();
 
     return ShaderMask(
@@ -119,7 +119,7 @@ class GradientMask extends StatelessWidget {
               colors: maskColors,
               stops: stops,
             ).createShader(bounds);
-          case GradientType.linear:
+         // case GradientType.linear:
           default:
             final begin = linearAxis == Axis.vertical
                 ? Alignment.topCenter

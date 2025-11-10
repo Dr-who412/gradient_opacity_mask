@@ -34,10 +34,10 @@ Import the package in your Dart file:
 import 'package:gradient_opacity_mask/gradient_opacity_mask.dart';
 ```
 
-You can then use the `GradientMask` widget to apply a gradient mask to any child widget. Here's a basic example of a vertical fade:
+You can then use the `GradientOpacityMask` widget to apply a gradient mask to any child widget. Here's a basic example of a vertical fade:
 
 ```dart
-GradientMask(
+GradientOpacityMask(
   opacities: [1.0, 0.0],
   stops: [0.0, 1.0],
   child: Image.network(
@@ -47,10 +47,10 @@ GradientMask(
 )
 ```
 
-For a simpler vertical fade, you can use the `GradientMask.vertical` convenience constructor:
+For a simpler vertical fade, you can use the `GradientOpacityMask.vertical` convenience constructor:
 
 ```dart
-GradientMask.vertical(
+GradientOpacityMask.vertical(
   child: Text(
     'Fading Text',
     style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
@@ -61,7 +61,7 @@ GradientMask.vertical(
 Here's a more complex example using a radial gradient:
 
 ```dart
-GradientMask(
+GradientOpacityMask(
   opacities: [1.0, 1.0, 0.0, 0.0],
   stops: [0.0, 0.4, 0.6, 1.0],
   gradientType: GradientType.radial,
