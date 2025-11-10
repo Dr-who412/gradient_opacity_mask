@@ -1,7 +1,8 @@
 # Gradient Opacity Mask
 
-[![pub version](https://img.shields.io/pub/v/gradient_opacity_mask.svg)](https://pub.dev/packages/gradient_opacity_mask)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[//]: # ([![pub version]&#40;https://img.shields.io/pub/v/gradient_opacity_mask.svg&#41;]&#40;https://pub.dev/packages/gradient_opacity_mask&#41;)
+
+[//]: # ([![license]&#40;https://img.shields.io/badge/license-MIT-blue.svg&#41;]&#40;https://opensource.org/licenses/MIT&#41;)
 
 A versatile Flutter widget that applies a customizable gradient mask to any child widget, allowing for beautiful fade effects and creative blends.
 

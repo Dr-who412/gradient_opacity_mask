@@ -105,7 +105,7 @@ class DemoPage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(12),
       child: Image.network(
-        'https://images.unsplash.com/photo-1617094541818-5a242835925a?w=400',
+        'https://wallpaperaccess.com/full/2833661.jpg',
         width: 300,
         height: 200,
         fit: BoxFit.cover,
