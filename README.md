@@ -5,7 +5,7 @@
 
 A versatile Flutter widget that applies a customizable gradient mask to any child widget, allowing for beautiful fade effects and creative blends.
 
-| Vertical & Horizontal Fades | Radial "Spotlight" | Advanced Custom Fades |
+| Vertical Fades |  Horizontal Fades| Advanced Custom Fades |
 | :---: | :---: | :---: |
 | ![Vertical and Horizontal Examples](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101446.png) | ![Radial Gradient Example](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101500.png) | ![Advanced Fade Examples](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101509.png) |
 

@@ -1,6 +1,6 @@
 name: gradient_opacity_mask
 description: A versatile Flutter widget that applies a customizable gradient mask (linear, radial, or sweep) to any child widget, allowing for beautiful fade effects.
-version: 1.0.0
+version: 1.0.0+1
 homepage: https://github.com/Dr-who412/gradient_opacity_mask.git
 repository: https://github.com/Dr-who412/gradient_opacity_mask.git
 

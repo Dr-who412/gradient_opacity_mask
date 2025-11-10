@@ -1,4 +1,4 @@
-## 1.0.0
+## 1.0.0+1
 
 - Initial release of the gradient_opacity_mask package.
 - Added GradientOpacityMask widget with support for Linear, Radial, and Sweep gradients.
