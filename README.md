@@ -1,74 +1,142 @@
-# gradient_opacity_mask
+# Gradient Opacity Mask
 
-A versatile Flutter widget that applies a customizable gradient mask (linear, radial, or sweep) to any child widget, allowing for beautiful fade effects.
+[![pub version](https://img.shields.io/pub/v/gradient_opacity_mask.svg)](https://pub.dev/packages/gradient_opacity_mask)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-![Example of Gradient Opacity Mask](https://i.imgur.com/8Jc8YfE.gif)
+A versatile Flutter widget that applies a customizable gradient mask to any child widget, allowing for beautiful fade effects and creative blends.
+
+![GradientOpacityMask Demo GIF](https://raw.githubusercontent.com/USERNAME/REPO/main/demo.gif)
+> **Note:** Create a GIF showcasing your widget and replace the link above. This is crucial for a UI package! You can use tools like [ScreenToGif](https://www.screentogif.com/) or Kap.
 
 ## Features
 
-*   Apply a gradient opacity mask to any Flutter widget.
-*   Supports three types of gradients: `Linear`, `Radial`, and `Sweep`.
-*   Highly customizable gradients with full control over `opacities` and `stops`.
-*   Convenience constructors for common vertical fade effects.
-*   Control the `BlendMode` for different masking effects.
-*   Specify the axis for linear gradients (`horizontal` or `vertical`).
+- ✅ **Apply a gradient opacity mask** to any widget.
+- 🎨 Supports **Linear**, **Radial**, and **Sweep** gradients.
+- 🚀 **Simple convenience constructors** for common vertical and horizontal fades.
+- ⚙️ **Fully customizable** opacities, colors, and stops.
+- 🖌️ Supports custom `BlendMode` for advanced creative effects beyond just opacity.
 
-## Getting started
+## Installation
 
-To use this package, add `gradient_opacity_mask` as a dependency in your `pubspec.yaml` file.
+Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  flutter:
-    sdk: flutter
-  gradient_opacity_mask: ^1.0.0 # Use the latest version
+  gradient_opacity_mask: ^1.0.0 # Replace with the latest version
 ```
 
-Then, run `flutter pub get` to install the package.
+Then, run `flutter pub get` in your terminal.
 
-## Usage
+## Getting Started
 
-Import the package in your Dart file:
+The easiest way to use the widget is with its convenience constructors. For example, to make a widget fade out towards the bottom:
 
 ```dart
 import 'package:gradient_opacity_mask/gradient_opacity_mask.dart';
-```
 
-You can then use the `GradientOpacityMask` widget to apply a gradient mask to any child widget. Here's a basic example of a vertical fade:
+// ...
 
-```dart
-GradientOpacityMask(
-  opacities: [1.0, 0.0],
-  stops: [0.0, 1.0],
-  child: Image.network(
-    'https://images.unsplash.com/photo-1595769524037-8c4308a4a47d',
-    fit: BoxFit.cover,
-  ),
+GradientOpacityMask.vertical(
+  child: YourScrollableList(), // Perfect for lists that scroll off-screen
 )
 ```
 
-For a simpler vertical fade, you can use the `GradientOpacityMask.vertical` convenience constructor:
+## Examples
 
+### 1. Vertical & Horizontal Fades
+
+Use the simple constructors for common UI effects.
+
+#### Vertical Fade (Top to Bottom)
 ```dart
 GradientOpacityMask.vertical(
-  child: Text(
-    'Fading Text',
-    style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
-  ),
+  child: Image.network('...'),
 )
 ```
 
-Here's a more complex example using a radial gradient:
+#### Horizontal Fade (Left to Right)
+```dart
+GradientOpacityMask.horizontal(
+  child: Text("Fading from left to right"),
+)
+```
 
+### 2. Three-Point Fades
+
+These constructors are great for making the center of a widget stand out or fade away.
+
+#### Vertical "Dip" (Visible Top/Bottom, Faded Center)
+```dart
+GradientOpacityMask.threePointVertical(
+  startOpacity: 1.0,
+  centerOpacity: 0.0,
+  endOpacity: 1.0,
+  child: Image.network('...'),
+)
+```
+
+#### Horizontal "Window" (Visible Center, Faded Edges)
+```dart
+GradientOpacityMask.threePointHorizontal(
+  startOpacity: 0.0,
+  centerOpacity: 1.0,
+  endOpacity: 0.0,
+  child: Text("I'm in the spotlight!"),
+)
+```
+
+### 3. Advanced Custom Gradients
+
+For complete control, use the default constructor.
+
+#### Custom Linear Gradient
+This creates a sharp fade-in/fade-out effect at the edges.
 ```dart
 GradientOpacityMask(
-  opacities: [1.0, 1.0, 0.0, 0.0],
-  stops: [0.0, 0.4, 0.6, 1.0],
-  gradientType: GradientType.radial,
-  child: YourAwesomeWidget(),
+  opacities: const [0.0, 1.0, 1.0, 0.0],
+  stops: const [0.0, 0.2, 0.8, 1.0],
+  linearAxis: Axis.horizontal,
+  child: Image.network('...'),
 )
 ```
 
-## Additional information
+#### Radial Gradient (Spotlight Effect)
+This makes the widget fully visible in the center and fade out towards the edges.
+```dart
+GradientOpacityMask(
+  opacities: const [1.0, 1.0, 0.0],
+  stops: const [0.0, 0.5, 1.0],
+  gradientType: GradientType.radial,
+  child: YourWidget(),
+)
+```
 
-For more examples, check out the `/example` folder in the repository. If you encounter any issues or have suggestions for improvement, please file an issue on the GitHub repository. Contributions are welcome!
+#### Sweep Gradient (Radar Effect)
+```dart
+GradientOpacityMask(
+  opacities: const [0.0, 1.0, 0.0],
+  stops: const [0.25, 0.5, 0.75],
+  gradientType: GradientType.sweep,
+  child: YourWidget(),
+)
+```
+
+## Main Properties
+
+| Parameter      | Type           | Description                                                              |
+|----------------|----------------|--------------------------------------------------------------------------|
+| `child`        | `Widget`       | **Required.** The widget to apply the mask to.                           |
+| `opacities`    | `List<double>` | **Required.** List of opacity values (0.0 to 1.0).                       |
+| `stops`        | `List<double>` | **Required.** List of positions (0.0 to 1.0) for each opacity.           |
+| `gradientType` | `GradientType` | The type of gradient: `linear`, `radial`, or `sweep`. Defaults to `linear`. |
+| `linearAxis`   | `Axis`         | The axis for linear gradients: `vertical` or `horizontal`. Defaults to `vertical`. |
+| `blendMode`    | `BlendMode`    | The blend mode for the shader. Defaults to `BlendMode.dstIn` for opacity. |
+
+
+## Contributing
+
+Contributions are welcome! If you find a bug or have a feature request, please open an issue. If you want to contribute code, please open a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
