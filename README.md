@@ -1,12 +1,14 @@
 # Gradient Opacity Mask
 
-[//]: # ([![pub version]&#40;https://img.shields.io/pub/v/gradient_opacity_mask.svg&#41;]&#40;https://pub.dev/packages/gradient_opacity_mask&#41;)
-
-[//]: # ([![license]&#40;https://img.shields.io/badge/license-MIT-blue.svg&#41;]&#40;https://opensource.org/licenses/MIT&#41;)
+[![pub version](https://img.shields.io/pub/v/gradient_opacity_mask.svg)](https://pub.dev/packages/gradient_opacity_mask)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A versatile Flutter widget that applies a customizable gradient mask to any child widget, allowing for beautiful fade effects and creative blends.
 
-![GradientOpacityMask Demo GIF](https://raw.githubusercontent.com/USERNAME/REPO/main/demo.gif)
+| Vertical & Horizontal Fades | Radial "Spotlight" | Advanced Custom Fades |
+| :---: | :---: | :---: |
+| ![Vertical and Horizontal Examples](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101446.png) | ![Radial Gradient Example](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101500.png) | ![Advanced Fade Examples](https://github.com/Dr-who412/gradient_opacity_mask/raw/image/assets/Screenshot_20251110_101509.png) |
+
 > **Note:** Create a GIF showcasing your widget and replace the link above. This is crucial for a UI package! You can use tools like [ScreenToGif](https://www.screentogif.com/) or Kap.
 
 ## Features
